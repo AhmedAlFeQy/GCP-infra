@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python
+spec:
+  selector:
+    matchLabels:
+      name: python
+      app: app
+  template:
+    metadata:
+      labels:
+        name: python
+        app: app
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 6379
+      - name: python
+        image: gcr.io/feki-368302/app:latest
+        resources:
+        ports:
+        - containerPort: 8000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-service
+  labels:
+    app: app
+spec:
+  type: LoadBalancer
+  selector:
+    name: python
+    app: app
+  ports:
+  - port: 8000
+    targetPort: 8000
