@@ -4,13 +4,13 @@ resource "google_service_account" "gke-sa" {
 }
 
 resource "google_project_iam_member" "gke-sa-member-1" {
-  project = "feki-368302"
+  project = "fair-lane-369013"
   role    = "roles/storage.admin"
   member = "serviceAccount:${google_service_account.gke-sa.email}"
 
 }
 resource "google_project_iam_member" "gke-sa-member-2" {
-  project = "feki-368302"
+  project = "fair-lane-369013"
   role    = "roles/storage.objectViewer"
   member = "serviceAccount:${google_service_account.gke-sa.email}"
 

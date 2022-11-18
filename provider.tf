@@ -1,6 +1,6 @@
 provider "google" {
   credentials = file("feki-GCP-key-admin.json")
 
-  project = "feki-368302"
+  project = "fair-lane-369013"
   region  = "us-central1"
 }

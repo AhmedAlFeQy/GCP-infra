@@ -7,7 +7,7 @@ always_run = timestamp()
 
 provisioner "local-exec" {
 working_dir = path.module
-command     = "docker build -t gcr.io/feki-368302/app /home/aalfeqy/GCP/app && docker push gcr.io/feki-368302/app"
+command     = "docker build -t gcr.io/fair-lane-369013/app ./app && docker push gcr.io/fair-lane-369013/app"
 }
 }
 

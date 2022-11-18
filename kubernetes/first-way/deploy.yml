@@ -20,7 +20,6 @@ spec:
         - containerPort: 6379
       - name: python
         image: gcr.io/feki-368302/app:latest
-        resources:
         ports:
         - containerPort: 8000
 
